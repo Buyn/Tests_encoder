@@ -1,0 +1,39 @@
+/* coment bloc  {{{
+ *
+ * Класс сканера поверехности ножа
+ * спомошью енкодера
+ * version 0.0
+***************************************
+***************************************
+ *  }}}*/
+/* include bloc {{{*/
+#ifndef EnScaner_h
+#define EnScaner_h
+// the #include statment and code go here...
+#if ARDUINO >= 100
+#include "Arduino.h"
+#else
+#include "WProgram.h"
+#endif
+#include ".h"
+/*}}}*/
+//define bloc  {{{
+/*}}}*/
+// EnScaner calss{{{
+class EnScaner {
+ public: // {{{
+	EnScaner(int );
+	EnScaner();
+	void stop(void);
+	void start(void);
+	unsigned long pos, steps_from_last;
+	/*}}}*/
+	/* private: * {{{*/
+#ifndef UNITTEST/*{{{*/
+ private:
+#endif /* UNITTEST }}}*/
+	void waitloop(void);
+	/*}}}*/
+ };
+ /*}}}*/
+#endif

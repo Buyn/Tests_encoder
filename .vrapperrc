@@ -1,0 +1,21 @@
+noremap gh <HOME>
+noremap gl <END>
+noremap zh [z
+noremap zl ]z
+noremap mp :copy .<CR>
+noremap mP :copy -.<CR>
+noremap mk :move .-2<CR>
+noremap mj :move .+1<CR>
+eclipseaction runjunit org.eclipse.jdt.junit.junitShortcut.run
+eclipseaction rerunlast org.eclipse.jdt.junit.junitShortcut.rerunLast
+eclipseaction rerunfail org.eclipse.jdt.junit.junitShortcut.rerunFailedFirst
+eclipseaction debugjunit org.eclipse.jdt.junit.junitShortcut.debug
+noremap <F2> :rerunlast
+:set gvimpath=D:\scripts\CMD\CygWin\vim.cmd
+#:set gvimargs= 	gvimargs=+{line} -c normal zv{col}| -c set nobackup -f -n {file}
+#:set gvimargs=+{line} -c normal zv{col}| -c set nobackup -f -n {file}
+#:set gvimargs='+normal {line}G{col}|' {file}
+:set gvimargs={file} +{line} 
+#:set gvimargs={file} '+cal cursor({line},{col})' 
+noremap <M-e> :vim
+noremap <F2> :vim<cr>
