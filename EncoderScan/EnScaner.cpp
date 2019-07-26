@@ -19,7 +19,7 @@ void EnScaner::waitloop(void){
 	loopMain();
 	} //}}}
 
-/*   EnScaner::start   * {{{ */
+/*   EnS caner::start   * {{{ */
 bool EnScaner::start(void){
 	if (enable || stopingScaner) return false;
 	enable = true;
@@ -31,35 +31,35 @@ bool EnScaner::start(void){
 bool EnScaner::stop(void){
 	enable = false;
 	stopingScaner = true;
-	//set x to 0
+	posm->gotoPOS(motorX, X_MIN);
+	posm->gotoPOS(motorZ, Z_MIN);
+	posm->gotoPOS(motorY, Y_MIDL);
 	return true;
 	} //}}}
 
 /*   EnScaner::isStoping   * {{{ */
 bool EnScaner::isStoping(void){
-	if (enable) ruturn false;
-	//set x to 0
-	//if pos x ==0
-	// stopingScaner = false;
-	// send encoder stop
+  if (enable || stopingScaner) ruturn false;
+	posm->gotoPOS(motorZ, Z_MIN);
+	posm->gotoPOS(motorY, Y_MIDL);
+	if (posm->gotoPOS(motorX, X_MIN) == X_MIN){
+		stopingScaner = false;
+		//todo сообшить о завершениии екодера розбери
+		return false;
+		}
 	return true;
 	} //}}}
 
 /*   EnScaner::motorStop   * {{{ */
 void EnScaner::motorStop(int tag){
-	posm->stop(
+	posm->stop(tag);
 	} //}}}
-
 
 /*   EnScaner::scanScript   * {{{ */
 bool EnScaner::scanScript(void){
 	return true;
 	} //}}}
 
-/*   EnScaner::stop   * {{{ */
-void EnScaner::stop(void){
-	//value = 0;
-	} //}}}
 
 
 

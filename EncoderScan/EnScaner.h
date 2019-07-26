@@ -20,6 +20,14 @@
 #include "postepmotor.h"
 /*}}}*/
 //define bloc  {{{
+#define motorX 1
+#define motorY 0
+#define motorZ 3
+#define X_MIN 0
+#define X_MAX 1000
+#define Z_MIN 0
+#define Z_MAX 100
+#define Y_MIDL 100
 /*}}}*/
 // EnScaner calss{{{
 typedef void (*GeneralMessageFunction) ();

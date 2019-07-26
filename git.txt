@@ -6,5 +6,5 @@ git commit -m "first commit"
 git remote add origin https://github.com/Buyn/SloeberGTest.git
 git push -u origin master
 :or push an existing repository from the command line
-git remote add origin https://github.com/Buyn/SloeberGTest.git
+git remote add origin https://github.com/Buyn/Tests_encoder.git
 git push -u origin master
